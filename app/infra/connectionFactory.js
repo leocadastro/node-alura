@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 
-function createDbConnection() {
+var createDbConnection = function() {
 	return mysql.createConnection({
 		host : 'exxact-mysql.cpjslnuppeww.us-west-2.rds.amazonaws.com',
 		user : 'exxactuser',

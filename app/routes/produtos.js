@@ -1,10 +1,11 @@
 module.exports = function(app) {
 	app.get('/produtos', function(req, res) {
 		var connection = app.infra.connectionFactory();
+		var produtosDAO = new app.infra.ProdutosDAO(connection);
 
-		connection.query('select * from Livros', function(err, results) {
+		produtosDAO.lista(function(err, results) {
 			if (err) throw err;
-			
+
 			res.render('produtos/lista', {lista: results})
 		});
 
