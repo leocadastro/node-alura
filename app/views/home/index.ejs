@@ -67,8 +67,8 @@
 <nav class="categories-nav">
     <ul class="container">
         <li class="category"><a href="http://www.casadocodigo.com.br">Home</a></li>
-        <li class="category"><a href="/collections/livros-de-agile">
-                Agile </a></li>
+        <li class="category"><a href="/produtos">
+                Livros </a></li>
     </ul>
 </nav>
 
@@ -160,5 +160,12 @@
 		Curso Alura
     </div>
 </footer>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+	var socket = io();
+	socket.on('novaPromocao', function(data) {
+		alert('Livro em Promoção: ' + data.livro.titulo)
+	})
+</script>
 </body>
 </html>

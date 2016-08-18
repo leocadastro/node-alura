@@ -6,13 +6,16 @@
 	<body>
 		<form action="/promocoes/create" method="post">
 			<div class="">
-				<select class="" name="livro[id]">
+				<input type="text" name="mensagem" />
+			</div>
+			<div class="">
+				<select class="" name="livro[titulo]">
 					<% for(var i=0; i<lista.length;i++) {%>
-						<option value="<%=lista[i].id%>"><%=lista[i].titulo%></option>
+						<option value="<%=lista[i].titulo%>"><%=lista[i].titulo%></option>
 					<%}%>
 				</select>
 			</div>
-			<inpu type="submit" value="Cadastrar Promoção"/>
+			<input type="submit" value="Cadastrar Promoção"/>
 		</form>
 	</body>
 </html>

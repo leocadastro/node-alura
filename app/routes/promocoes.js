@@ -22,5 +22,10 @@ module.exports = function(app) {
 
 	app.get('/promocoes/create', listaProdutos);
 
+	app.post('/promocoes/create', function(req, res) {
+		var promocao = req.body;
 
+		app.get('io').emit('novaPromocao', promocao);
+		res.redirect('/promocoes/create');
+	})
 }
